@@ -8,7 +8,9 @@ node ip-10-0-2-32 {
 }
 
 node ip-10-0-2-181 {
+	include ssh
 }
 
 node ip-10-0-2-73 {
+	include ssh
 }
