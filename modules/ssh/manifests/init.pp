@@ -1,4 +1,4 @@
-ass sshd {
+class sshd {
 	package {
 		"openssh-server": ensure => installed;
 	}
@@ -15,7 +15,7 @@ ass sshd {
 		require => Package["openssh-server"],
 	}
 
-	service { "sshd":
+	service { "ssh":
 		# automatically start at boot time
 		enable     => true,
 		# restart service if it is not running
