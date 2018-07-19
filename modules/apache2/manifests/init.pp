@@ -33,7 +33,7 @@ class apache2 {
 		# package and configuration must be present for service
 		require    => [ Package["apache2"],
 			        File["/etc/apache2/apache2.conf"], 
-				File["/etc/apache2/index.html"] ],
+				File["/var/www/html/index.html"] ],
 		# changes to configuration cause service restart
 		subscribe  => File["/etc/apache2/apache2.conf"],
 	}
