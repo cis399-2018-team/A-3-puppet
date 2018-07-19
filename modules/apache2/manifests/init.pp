@@ -17,7 +17,7 @@ class apache2 {
 		mode    => 644,
 		owner   => ubuntu,
 		group   => ubuntu,
-		recurse => true
+		recurse => true,
 		require => Package["apache2"],
 	}	
 	
@@ -32,7 +32,7 @@ class apache2 {
 		hasrestart => true,
 		# package and configuration must be present for service
 		require    => [ Package["apache2"],
-			        File["/etc/apache2/apache2.conf"] 
+			        File["/etc/apache2/apache2.conf"], 
 				File["/etc/apache2/index.html"] ],
 		# changes to configuration cause service restart
 		subscribe  => File["/etc/apache2/apache2.conf"],
