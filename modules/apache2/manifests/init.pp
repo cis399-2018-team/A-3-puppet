@@ -11,6 +11,15 @@ class apache2 {
 		# package must be installed before configuration file
 		require => Package["apache2"],
 	}
+
+	file { "/var/www/html/index.html":
+		source  => "puppet://modules/apache2/index.html",
+		mode    => 644,
+		owner   => ubuntu,
+		group   => ubuntu,
+		recurse => true
+		require => Package["apache2"],
+	}	
 	
 	service { "apache2":
 		# automatically start at boot time
@@ -23,7 +32,8 @@ class apache2 {
 		hasrestart => true,
 		# package and configuration must be present for service
 		require    => [ Package["apache2"],
-			        File["/etc/apache2/apache2.conf"] ],
+			        File["/etc/apache2/apache2.conf"] 
+				File["/etc/apache2/index.html"] ],
 		# changes to configuration cause service restart
 		subscribe  => File["/etc/apache2/apache2.conf"],
 	}
