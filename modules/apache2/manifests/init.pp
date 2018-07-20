@@ -13,7 +13,7 @@ class apache2 {
 	}
 
 	file { "/var/www/html/index.html":
-		source  => "puppet://modules/apache2/index.html",
+		source  => "puppet:///modules/apache2/index.html",
 		mode    => 644,
 		owner   => ubuntu,
 		group   => ubuntu,
