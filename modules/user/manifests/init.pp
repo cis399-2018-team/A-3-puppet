@@ -1,11 +1,11 @@
 class user {
     group { 'sysadmin':
         ensure => 'present',
-        gid    => '1002',
+        gid    => '5054',
     }
 
     User {
-	gid => '1002',
+	gid => '5054',
     }
 
     user { 'alegge':
