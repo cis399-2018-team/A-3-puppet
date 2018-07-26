@@ -1,4 +1,14 @@
 class user {
+    group { 'sysadmin':
+        ensure => 'present'
+        gid    => '1002',
+
+    }
+
+    User {
+	gid => '1002',
+    }
+
     user { 'alegge':
         ensure  => present,
         home    => '/home/alegge',
