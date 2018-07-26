@@ -1,8 +1,7 @@
 class user {
     group { 'sysadmin':
-        ensure => 'present'
+        ensure => 'present',
         gid    => '1002',
-
     }
 
     User {
