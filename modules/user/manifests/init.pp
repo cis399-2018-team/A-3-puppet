@@ -1,4 +1,4 @@
-ass user {
+class user {
     user { 'alegge':
         ensure  => present,
         home    => '/home/alegge',
