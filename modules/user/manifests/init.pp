@@ -10,13 +10,13 @@ class user {
     }
 
     user { 'alegge':
-	uid 	=> '1000',
         ensure  => present,
         home    => '/home/alegge',
         managehome => true
     }
     ssh_authorized_key { 'alegge_ssh':
-        user => 'alegge',
+        ensure => 'present',
+	user => 'alegge',
         type => 'ssh-rsa',
         key  => 'AAAAB3NzaC1yc2EAAAADAQABAAABAQCslRM6iX4tMbm7d0XC9JPjRmzvTC+pigHzEeNjzG/K+JER8tXkc1c8uYzU7vylfdmsQckpuit7TujhDHdDDqV9TaB90vcgBBG8l3szlsEuYtd8DQ+5Uk5SzMDrNMoE62IuU4kij8Pg/cbDbmYTO6Fk03FZsbU2i9zoPQwmdx9BPrcZjJMmJUKkQ8AXRzodO5QECVekmtSMNB4t9TxOYUQdZuNdTu+1Mit8gkUoam9MQC4KvgmisHh8EqhegiT/+HQNvi5zns9s6P5b5DWIoA+ez1uL0mjd2i1heLL+72B2qLcBsNahVWzA6oEw647etMdhLF0Nkp+R5Wt1QptjRxLt',
     }
