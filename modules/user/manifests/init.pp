@@ -4,7 +4,6 @@ class user {
         gid    => '5054',
     }
 
-
     User {
     	shell => '/bin/bash',
 	gid => '5054',
